@@ -9,9 +9,10 @@ import (
 )
 
 func main() {
+	fmt.Println("Trying to decode the pkcs12 certificate keypair using go-pkcs12 library version 0.4.0")
 	argsToMain := os.Args[1:]
-	if len(argsToMain) == 0 {
-		log.Fatal("please provide the path of the file to read")
+	if len(argsToMain) != 2 {
+		log.Fatal("please provide only 2 parameters, one for the path of file to read and second password to access certificate")
 	}
 
 	fileContent, err := os.ReadFile(argsToMain[0])
